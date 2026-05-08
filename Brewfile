@@ -44,7 +44,7 @@ cask "github", greedy: true
 # App to build and share containerised applications and microservices
 cask "docker-desktop", greedy: true
 #  Vivaldi Web browser
-cask "vivaldi", greedy: true
+# cask "vivaldi", greedy: true
 # Full TeX Live distribution with GUI applications
 # cask "mactex", greedy: true
 # LaTeX typesetting for PowerPoint
