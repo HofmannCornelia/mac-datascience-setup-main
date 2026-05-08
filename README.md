@@ -186,6 +186,10 @@ Manage dotfiles across machines:
 
 ## Known Issues
 
+### 2026-05-08
+- mactex download issue (partial download only)
+- tresorit has no sha256 checksum => manual install 
+
 ## Uninstalling Casks
 
 Uninstalling cask applications with all associated files:
