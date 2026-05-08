@@ -1,0 +1,131 @@
+%% LuGuana Package, written by Lukas Hollenstein (hols@zhaw.ch)
+%% defaults and definitions useful to use with IguanaTex (PowerPoint Add-In)
+%%
+%% v1: 2014/05/15, first implementation
+%% v2: 2015/02/20, added tasks package and set \raggedright
+%% v3: 2015/02/24, added babel-ngerman and set \parskip
+%% v4: 2015/05/07, added xtabular, added ZHAW colors, changed \vecto to use pmatrix environment
+%% v5: 2016/07/08, added \RequirePackage[utf8]{inputenc}, \dz, \ddz, \pdz and \ppz
+
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{luguana}[2015/05/07 LuGuana Package]
+
+\pagestyle{empty}
+
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[ngerman]{babel}
+\RequirePackage{lmodern}
+\RequirePackage{color}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{tasks}
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{siunitx}
+% \RequirePackage{geometry}
+\setlength\textwidth{32.5em}
+
+%% 'sans serif' option
+\DeclareOption{sans}{
+  \renewcommand{\familydefault}{\sfdefault}
+}
+
+%% 'roman' option
+\DeclareOption{roman}{
+  \renewcommand{\familydefault}{\rmdefault}
+}
+
+\ExecuteOptions{sans}
+
+\ProcessOptions\relax
+
+
+%% paragraph layout
+\raggedright
+ %TODO% I want no hyphenation and ragged right. Not sure if \raggedright is the best solution.
+%\RequirePackage[newcommands,document]{ragged2e}
+%\RequirePackage[none]{hyphenat}
+\setlength{\parskip}{0.5\baselineskip} % skip between paragraphs
+
+% colors
+%\usepackage{xcolor}
+\definecolor{zhawblue}{RGB}{0,100,166}
+\definecolor{iasgray}{RGB}{126,135,144}
+\definecolor{iclsgray}{RGB}{126,135,144}
+\definecolor{ibtpink}{RGB}{173,103,156}
+\definecolor{icbcpurple}{RGB}{104,85,153}
+\definecolor{ifmblue}{RGB}{64,125,193}
+\definecolor{ilgiyellow}{RGB}{255,204,0}
+\definecolor{iunrgreen}{RGB}{130,188,82}
+\definecolor{awgred}{RGB}{232,82,18}
+\newcommand{\awgred}{\textcolor{awgred}}
+\newcommand{\zhawblue}{\textcolor{zhawblue}}
+\newcommand{\iunrgreen}{\textcolor{iunrgreen}}
+\newcommand{\iasgray}{\textcolor{iasgray}}
+\newcommand{\iclsgray}{\textcolor{iasgray}}
+
+% color annotations
+\newcommand{\red}{\textcolor{awgred}}
+\newcommand{\blue}{\textcolor{zhawblue}}
+\newcommand{\green}{\textcolor{iunrgreen}}
+
+% equations
+\newcommand{\eq}[1]{\begin{align*} #1 \end{align*}}
+\newcommand{\lareq}[1]{{\large\eq{ #1 }}}
+\newcommand{\ds}[1]{$\displaystyle #1$}
+\newcommand{\dsbox}[1]{\fbox{\ds{#1}}}
+
+% math
+\newcommand{\follows}{\ensuremath{\qquad\Rightarrow\qquad}}
+\newcommand{\followsboth}{\ensuremath{\qquad\Leftrightarrow\qquad}}
+\newcommand{\followsThrough}[1]{\ensuremath{\qquad\stackrel{#1}{\Rightarrow}\qquad}}
+\newcommand{\mustequal}{\ensuremath{\stackrel{!}{=}}}
+\newcommand{\couldequal}{\ensuremath{\stackrel{?}{=}}}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\dd}{\text{d}}
+\newcommand{\dx}{\dd{}x}
+\newcommand{\dy}{\dd{}y}
+\newcommand{\dz}{\dd{}z}
+\newcommand{\dt}{\dd{}t}
+\newcommand{\ddx}[1]{\frac{\dd{}#1}{\dx}}
+\newcommand{\ddy}[1]{\frac{\dd{}#1}{\dy}}
+\newcommand{\ddz}[1]{\frac{\dd{}#1}{\dz}}
+\newcommand{\ddt}[1]{\frac{\dd{}#1}{\dt}}
+\newcommand{\pd}{\partial}
+\newcommand{\pdx}{\pd{}x}
+\newcommand{\pdy}{\pd{}y}
+\newcommand{\pdz}{\pd{}z}
+\newcommand{\pdt}{\pd{}t}
+\newcommand{\ppx}[1]{\frac{\pd{}#1}{\pdx}}
+\newcommand{\ppy}[1]{\frac{\pd{}#1}{\pdy}}
+\newcommand{\ppz}[1]{\frac{\pd{}#1}{\pdz}}
+\newcommand{\ppt}[1]{\frac{\pd{}#1}{\pdt}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\vecto}[1]{\begin{pmatrix}#1\end{pmatrix}}
+%\newcommand{\vecto}[1]{\left(\begin{array}{c}#1\end{array}\right)}
+
+% units
+%\newcommand{\unit}[1]{\,\mathrm{#1}}
+\newcommand{\mm}{\,\text{mm}}
+\newcommand{\cm}{\,\text{cm}}
+\newcommand{\m}{\,\text{m}}
+\newcommand{\km}{\,\text{km}}
+% siunitx
+\sisetup{per-mode = symbol}
+\DeclareSIUnit[]{\Mio}{Mio.{}}
+\DeclareSIUnit[]{\Fr}{Fr{}}
+\DeclareSIUnit[]{\CHF}{CHF{}}
+\DeclareSIUnit[]{\EUR}{EUR{}}
+\DeclareSIUnit[]{\year}{a{}}
+\DeclareSIUnit[]{\yr}{a{}}
+\DeclareSIUnit[]{\fahrenheit}{\degree F}
+
+% additional defs for package tabularx
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\endinput

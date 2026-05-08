@@ -1,0 +1,141 @@
+%% LH Defaults Package, written by Lukas Hollenstein (hols@zhaw.ch)
+%%
+%% v1: 2014/01/09, first implementation
+%% v2: 2014/05/05, added rotating and tabularx and \dy, \ddy, \py, \ppy
+%% v3: 2015/01/19, added enumitem and changed \px -> \pdx, \py -> \pdy, \pt -> \pdt
+%% v4: 2015/05/04, added wrapfig
+%% v5: 2015/05/07, added ZHAW colors, changed \vecto to use pmatrix environment
+%% v6: 2015/11/05, changed from color to xcolor package with table option
+%% v7: 2016/07/08, added \RequirePackage[utf8]{inputenc}, \dz, \ddz, \pdz and \ppz
+%% v8: 2019/11/01, added unit declarations for siunitx package
+
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{lhdef}[2019/11/01 LH Defaults Package]
+
+
+\RequirePackage{lmodern}
+
+\RequirePackage[T1]{fontenc}
+
+\RequirePackage[utf8]{inputenc}
+
+\RequirePackage{amsmath,amssymb}
+
+\RequirePackage{graphicx}
+
+\RequirePackage[table]{xcolor}
+
+\RequirePackage{multicol}
+
+\RequirePackage{enumitem}
+
+\RequirePackage{booktabs}
+
+\RequirePackage{tabularx}
+
+\RequirePackage{rotating}
+
+\RequirePackage{pgfplots}
+
+\RequirePackage{wrapfig}
+
+%\RequirePackage{units}
+
+%\RequirePackage[squaren,thinqspace]{SIunits}
+
+\RequirePackage{siunitx}
+
+%% 'sans serif' option
+\DeclareOption{sans}{
+  \renewcommand{\familydefault}{\sfdefault}
+}
+
+%% 'roman' option
+\DeclareOption{roman}{
+  \renewcommand{\familydefault}{\rmdefault}
+}
+
+%% Global indentation option
+\newif\if@neverindent\@neverindentfalse
+\DeclareOption{neverindent}{
+  \@neverindenttrue
+}
+
+\ExecuteOptions{roman}
+
+\ProcessOptions\relax
+
+
+%% implement the `neverindent' option
+\newlength{\pardefault}
+\setlength{\pardefault}{\parindent}
+\newcommand{\neverindent}{\setlength{\parindent}{0pt}}
+\newcommand{\autoindent}{\setlength{\parindent}{\pardefault}}
+\if@neverindent
+\neverindent
+\fi
+
+% colors
+\RequirePackage{xcolor}
+\definecolor{zhawblue}{RGB}{0,100,166} % #0064a6
+\definecolor{iasgray}{RGB}{126,135,144} % #7e8790
+\definecolor{iclsgray}{RGB}{126,135,144} % #7e8790
+\definecolor{ibtpink}{RGB}{173,103,156} % #ad679c
+\definecolor{icbcpurple}{RGB}{104,85,153} % #685599
+\definecolor{ifmblue}{RGB}{64,125,193} % #407dc1
+\definecolor{ilgiyellow}{RGB}{255,204,0} % #ffcc00
+\definecolor{iunrgreen}{RGB}{130,188,82} % #82bc52
+\definecolor{awgred}{RGB}{232,82,18} % #e85212
+\newcommand{\red}{\textcolor{awgred}}
+\newcommand{\blue}{\textcolor{zhawblue}}
+\newcommand{\zhawblue}{\textcolor{zhawblue}}
+\newcommand{\green}{\textcolor{iunrgreen}}
+\newcommand{\iasgray}{\textcolor{iasgray}}
+\newcommand{\iclsgray}{\textcolor{iasgray}}
+
+% equations
+\newcommand{\eq}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\lareq}[1]{{\large\eq{#1}}}
+
+% math
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\dd}{\text{d}}
+\newcommand{\dx}{\dd{}x}
+\newcommand{\dy}{\dd{}y}
+\newcommand{\dz}{\dd{}z}
+\newcommand{\dt}{\dd{}t}
+\newcommand{\ddx}[1]{\frac{\dd{}#1}{\dx}}
+\newcommand{\ddy}[1]{\frac{\dd{}#1}{\dy}}
+\newcommand{\ddz}[1]{\frac{\dd{}#1}{\dz}}
+\newcommand{\ddt}[1]{\frac{\dd{}#1}{\dt}}
+\newcommand{\pd}{\partial}
+\newcommand{\pdx}{\pd{}x}
+\newcommand{\pdy}{\pd{}y}
+\newcommand{\pdz}{\pd{}z}
+\newcommand{\pdt}{\pd{}t}
+\newcommand{\ppx}[1]{\frac{\pd{}#1}{\pdx}}
+\newcommand{\ppy}[1]{\frac{\pd{}#1}{\pdy}}
+\newcommand{\ppz}[1]{\frac{\pd{}#1}{\pdz}}
+\newcommand{\ppt}[1]{\frac{\pd{}#1}{\pdt}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\vecto}[1]{\begin{pmatrix}#1\end{pmatrix}}
+%\newcommand{\vecto}[1]{\left(\begin{array}{c}#1\end{array}\right)}
+
+% siunitx
+\sisetup{per-mode = symbol}
+\DeclareSIUnit[]{\Mio}{Mio.{}}
+\DeclareSIUnit[]{\Fr}{Fr{}}
+\DeclareSIUnit[]{\CHF}{CHF{}}
+\DeclareSIUnit[]{\EUR}{EUR{}}
+\DeclareSIUnit[]{\year}{a{}}
+\DeclareSIUnit[]{\yr}{a{}}
+\DeclareSIUnit[]{\Fahrenheit}{\degree F}
+
+% additional defs for package tabularx
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\endinput

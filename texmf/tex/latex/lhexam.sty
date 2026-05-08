@@ -1,0 +1,175 @@
+%% LH Exam Package, written by Lukas Hollenstein (hols@zhaw.ch)
+%%
+%% v1: 2015/01/16, first implementation
+%% v2: 2015/05/07, added \makeshortexamtitle
+
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{lhexam}[2015/05/07 LH Exam Package]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% general setting and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% LH Defaults packages and settings
+\RequirePackage[sans]{lhdef}
+
+%% Language
+\RequirePackage[ngerman]{babel}
+
+%% page layout
+\RequirePackage[cm,empty]{fullpage}
+
+%% paragraph layout
+\raggedright
+ %TODO% I want no hyphenation and ragged right. Not sure if \raggedright is the best solution.
+%\RequirePackage[newcommands,document]{ragged2e}
+%\RequirePackage[none]{hyphenat}
+\setlength{\parskip}{0.5\baselineskip} % skip between paragraphs
+
+%% other
+\RequirePackage[fleqn]{mathtools}
+\RequirePackage{import}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% setting and getting exam infos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% exam meta data
+\newcommand{\@programme}{Studiangang}  % e.g. BT13
+\newcommand{\@course}{Kurs}  % e.g. Mathematik 1
+\newcommand{\@examname}{Pr\"ufung}  % e.g Modulprüfung Repetition
+\newcommand{\@lecturer}{DozentIn}
+\newcommand{\programme}[1]{\renewcommand{\@programme}{#1}}
+\newcommand{\course}[1]{\renewcommand{\@course}{#1}}
+\newcommand{\examname}[1]{\renewcommand{\@examname}{#1}}
+\newcommand{\lecturer}[1]{\renewcommand{\@lecturer}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% setting for exsheets package for problems and solutions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% use exsheets to display problems and solutions etc.
+\RequirePackage{exsheets}
+\SetupExSheets{
+	question/type = exam,
+	question/pre-body-hook = {\vspace{0.2\baselineskip}},
+	solution/pre-body-hook = {\vspace{0.2\baselineskip}},
+	solution/pre-hook = {\vspace{0.8\baselineskip}},
+	headings-format = {\large\bfseries},
+	counter-format = qu,
+}
+\newcommand{\showsolutions}{\SetupExSheets{solution/print=true}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% title page: logo, exam rules, results table and title page 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% logo
+\newcommand{\@examlogo}{lhexam_logo}
+\newcommand{\examlogo}[1]{\renewcommand{\@examlogo}{#1}}
+
+%% exam rules
+\newcommand{\@examrules}{%
+	Regeln vor \texttt{\textbackslash{}makeexamtitle} mit 
+	\texttt{\textbackslash{}examrules} definieren.
+}
+\newcommand{\examrules}[1]{\renewcommand{\@examrules}{#1}}
+
+%% results table
+%TODO% The following gives the user the possibility to enter a self-made
+% results table. Maybe it could be automized in some way.
+\newcommand{\@examresultstable}{%
+	Bewertungstabelle vor \texttt{\textbackslash{}makeexamtitle} 
+	mit \texttt{\textbackslash{}examresultstable} definieren.
+}
+\newcommand{\examresultstable}[1]{\renewcommand{\@examresultstable}{#1}}
+
+%% title page
+\RequirePackage{graphicx}
+\newcommand{\makeexamtitle}{% for normal exams
+	\begin{flushleft}
+		\includegraphics[width=0.4\textwidth]{\@examlogo}
+	\end{flushleft}
+	\vspace{2\baselineskip}
+	{\par\Large\bfseries\@programme, \@course, \@examname}
+	\vspace{0.5\baselineskip}
+	{\par\large{Datum:}\space\@date}
+	\vspace{0.1\baselineskip}
+	{\par\large{Dozent:}\space\@lecturer}
+	\vfill
+	\hrule
+	\vspace{0.1\baselineskip}
+	{\par\@examrules}
+	\vspace{0.1\baselineskip}
+	\hrule
+	\vfill
+%	{\par\large{Name:}\space\rule[-1mm]{10cm}{.1pt}}
+	{\par\large{Nachname:}\hspace{0.38\linewidth}\large{Vorname:}}
+	\vspace{1mm}
+	\hrule
+	\vfill
+	{\par\@examresultstable}
+	\vfill
+	{\par\large{Note:}\space\rule[-1mm]{3cm}{.1pt}\hfill\textbf{Viel Erfolg!}}
+	\clearpage
+}
+\newcommand{\makeexamtitlevariant}[1]{% for exams with variants
+	\begin{flushleft}
+		\includegraphics[width=0.4\textwidth]{\@examlogo}
+	\end{flushleft}
+	\vspace{2\baselineskip}
+	{\par\Large\bfseries\@programme, \@course, \@examname}
+	\vspace{0.5\baselineskip}
+	{\par\large{Datum:}\space\@date}
+	\vspace{0.1\baselineskip}
+	{\par\large{Dozent:}\space\@lecturer}
+	\vfill
+	\hrule
+	\vspace{0.1\baselineskip}
+	{\par\@examrules}
+	\vspace{0.1\baselineskip}
+	\hrule
+	\vfill
+%	{\par\large{Name:}\space\rule[-1mm]{10cm}{.1pt}}
+	{\par\large{Nachname:}\hspace{0.38\linewidth}\large{Vorname:}}
+	\vspace{1mm}
+	\hrule
+	\vfill
+	{\par\@examresultstable}
+	\vfill
+	{\par\large{Typ #1, Note:}\space\rule[-1mm]{3cm}{.1pt}\hfill\textbf{Viel Erfolg!}}
+	\clearpage
+}
+\newcommand{\makeshortexamtitle}{% for very short exams
+	\begin{multicols}{2}
+		\includegraphics[width=0.4\textwidth]{\@examlogo}
+		{\par\Large\bfseries\@programme, \@course}
+		\vspace{0.5\baselineskip}
+		{\par\Large\bfseries\@examname}
+		\vspace{0.5\baselineskip}
+		{\par\large{Datum:}\space\@date}
+		\vspace{0.1\baselineskip}
+		{\par\large{Dozent:}\space\@lecturer}
+	\end{multicols}
+	\vspace{0.5\baselineskip}
+	{\par\large{Name:}\hfill{Viel Erfolg!}}
+	\vspace{1mm}
+	\hrule
+	\vspace{2\baselineskip}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% other stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% lengths
+%\newlength{\solutionSpace}
+%\setlength{\solutionSpace}{0.37\textheight}
+
+
+\endinput

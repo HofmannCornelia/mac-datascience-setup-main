@@ -1,0 +1,14 @@
+name: default
+channels:
+  - conda-forge
+dependencies:
+  - python<3.14
+  - jupyter
+  - black-jupyter
+  - seaborn  # -> matplotlib, numpy, scipy, pandas
+  - openpyxl
+  - pingouin  # -> scikit-learn 
+  - statsmodels
+  - plotly
+  - greenlet
+  - salabim

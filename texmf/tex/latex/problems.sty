@@ -1,0 +1,72 @@
+%% Problems Package, written by Lukas Hollenstein (hols@zhaw.ch)
+%%
+%% v1: 2014/03/03, first implementation
+%% v2: 2015/01/07, added compatibility for Urs Mürset's \fr* input files
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{problems}[2014/03/03 Problems Package]
+
+
+\RequirePackage{tabularx}
+\RequirePackage[fleqn]{mathtools}
+\RequirePackage{import} 
+
+% style
+\pagestyle{empty}
+
+% section and problem numbering
+\renewcommand{\thesubsection}{Aufgabe~\arabic{subsection}:}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+\newcommand{\problemSection}{\subsection}
+\newcommand{\subProblemSection}{\subsubsection}
+
+% where to look for problem-files
+\newcommand{\problemsfolder}{aufgaben/}
+\newcommand{\setProblemsFolder}[1]{\renewcommand{\problemsfolder}{#1/}}
+
+% problems and solutions
+\newcommand{\@includeProblem}[2]{\problemSection{#1} \subimport{\problemsfolder}{#2}}
+\newcommand{\@includeSubProblem}[2]{\subProblemSection{#1} \subimport{\problemsfolder}{#2}}
+\newcommand{\includeProblem}{\@includeProblem}
+\newcommand{\includeSubProblem}{\@includeSubProblem}
+
+\renewcommand{\problem}[3]{}
+\newcommand{\@problemAndSolution}[2]{#1 $\phantom{foo}$\\[0.5em]\textbf{L\"osung:}\\ #2}
+\newcommand{\@problemOnly}[2]{#1}
+\newcommand{\@solutionOnly}[2]{#2}
+\newcommand{\showProblemAndSolution}{\renewcommand{\problem}{\@problemAndSolution}}
+\newcommand{\showProblemOnly}{\renewcommand{\problem}{\@problemOnly}}
+\newcommand{\showSolutionOnly}{\renewcommand{\problem}{\@solutionOnly}}
+
+% interface for compatibility with Urs Mürset's \fr* input files
+\newcommand{\@aufloesImport}[1]{\subimport{\problemsfolder}{#1}}
+\newcommand{\fra}{}
+\newcommand{\frb}{}
+\newcommand{\frc}{}
+\newcommand{\frd}{}
+\newcommand{\fre}{}
+\newcommand{\free}{}
+\newcommand{\frf}{}
+\newcommand{\frff}{}
+\newcommand{\@aufloesAufgabe}[1]{\@aufloesImport{#1}\frc}
+\newcommand{\@aufloesAufgabeLoesung}[1]{\@aufloesImport{#1}\frc $\phantom{foo}$\\[0.5em]\textbf{L\"osung:}\\ \frff}
+
+\newcommand{\@includeAufgabe}[2]{\problemSection{#1} \@aufloesAufgabe{#2}}
+\newcommand{\@includeSubAufgabe}[2]{\subProblemSection{#1} \@aufloesAufgabe{#2}}
+\newcommand{\@includeAufgabeLoesung}[2]{\problemSection{#1} \@aufloesAufgabeLoesung{#2}}
+\newcommand{\@includeSubAufgabeLoesung}[2]{\subProblemSection{#1} \@aufloesAufgabeLoesung{#2}}
+
+\newcommand{\showAufgaben}{%
+	\renewcommand{\includeProblem}{\@includeAufgabe}
+	\renewcommand{\includeSubProblem}{\@includeSubAufgabe}
+}
+\newcommand{\showAufgabenLoesungen}{%
+	\renewcommand{\includeProblem}{\@includeAufgabeLoesung}
+	\renewcommand{\includeSubProblem}{\@includeSubAufgabeLoesung}
+}
+\newcommand{\showProblemsAgain}{%
+	\renewcommand{\includeProblem}{\@includeProblem}
+	\renewcommand{\includeSubProblem}{\@includeSubProblem}
+}
+
+\endinput

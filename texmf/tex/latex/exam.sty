@@ -1,0 +1,146 @@
+%% Exam Package, written by Lukas Hollenstein (hols@zhaw.ch)
+%%
+%% v1: 2014/01/09, first implementation
+%% v2: 2014/01/17, removed results table from \mptitle
+%% v3: 2014/05/05, renamed \sptitle to \sptitle
+%% v4: 2015/01/16, replaced \problem, \subproblem etc. with using exsheets package
+
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{exam}[2014/05/05 Exam Package]
+
+
+% page layout and style
+\RequirePackage[cm]{fullpage}
+\pagestyle{empty}
+
+% paragraph layout
+\RequirePackage[newcommands,document]{ragged2e} % ragged right everywhere
+\setlength{\parskip}{0.5\baselineskip} % skip between paragraphs
+
+% lengths
+\newlength{\solutionSpace}
+\setlength{\solutionSpace}{0.37\textheight}
+
+% section and problem numbering
+%\renewcommand{\thesubsection}{Aufgabe~\arabic{subsection}:}
+%\renewcommand{\thesubsubsection}{\alph{subsubsection})}
+%\newcommand{\problem}[1]{\newpage\subsection{#1}}
+%\newcommand{\subproblem}[2]{\textbf{#1) [#2]}}
+
+% solutions
+%\newcommand{\showSolution}[1]{\paragraph{L\"osung} #1}
+%\newcommand{\hideSolution}[1]{}
+
+
+% use exsheets to display problems and solutions etc.
+\RequirePackage[]{exsheets}
+\SetupExSheets{
+	headings-format = {\large\bfseries},
+}
+
+% other packages 
+\RequirePackage[fleqn]{mathtools}
+\RequirePackage{import}
+
+
+% title page: Semesterprüfung
+% title: \sptitle[klasse][fach][pruefungsnummer][datum][typ]
+\newcommand{\sptitle}[5]{
+\thispagestyle{empty}
+\includegraphics[width=0.3\textwidth]{logo_zhaw_lsfm} %logo
+\vspace{4 em}
+
+\begin{center}
+{\Large\bf #1 #2 -- Semesterpr\"ufung #3}  % #1(klasse) #2(fach) ... #3(pruefungsnummer)
+\vspace{1 em}
+
+{\large\bf #4}  % #4(datum)
+\end{center}
+\vspace{2 em}
+\hrule
+
+\vspace{2 em}
+
+\begin{itemize}
+\item Zuerst den Namen \textbf{gut leserlich} unten eintragen. Auf alle allf\"alligen Zusatzbl\"atter auch oben rechts den Namen schreiben.
+\item Erlaubte Hilfsmittel: Vier A4-Seiten Zusammenfassung (2 A4-Bl\"atter doppelseitig oder 4 A4-Bl\"atter einseitig). Taschenrechner Ti-30 ausser Ti-30x pro Multiview.
+\item Zeit: 40 min
+\item S\"amtliche Berechnungen und \"Uberlegungen m\"ussen auf den abgegebenen Bl\"attern ersichtlich sein und abgegeben werden.
+\item Endresultate m\"ussen klar gekennzeichnet und eindeutig sein (unterstreichen). Ung\"ultige Resultate m\"ussen deutlich durchgestrichen werden. Falls nicht klar ist, was das g\"ultige Resultat ist, kann kein Punkt gegeben werden.
+\item Nicht mit Bleistift, Farbstift, oder anderen radierbaren Stiften schreiben (z.B.\ Frixion Ball).
+\item  Viel Erfolg!
+\end{itemize}
+\vspace{4 em}
+
+{\Large Name:}
+\vspace{1 em}
+
+\hrule
+\vspace{5 em}
+
+\begin{tabularx}{\textwidth}{ | X | C | C | C | C || C || C |}
+\hline \doubleheight
+Typ~#5  % #5(typ)
+& Aufgabe~1 & Aufgabe~2 & Aufgabe~3 & Aufgabe~4 & Total & Note
+\\ \hline \doubleheight
+Resultat & & & & & &
+\\ \hline
+\end{tabularx}
+
+\newpage
+}
+
+
+% title page: Modulpruefung
+% title: \mptitle[klasse][fach][datum]
+\newcommand{\mptitle}[3]{
+\thispagestyle{empty}
+\includegraphics[width=0.3\textwidth]{logo_zhaw_lsfm} %logo
+\vspace{3 em}
+
+\begin{center}
+{\Large\bf #1 #2 -- Modulpr\"ufung}  % #1(klasse) #2(fach)
+\vspace{1 em}
+
+{\large\bf #3}  % #3(datum)
+\end{center}
+\vspace{2 em}
+\hrule
+\vspace{2 em}
+
+\begin{itemize}
+\item Name \textbf{gut leserlich} unten eintragen.
+
+\item Erlaubte Hilfsmittel:
+\begin{itemize}
+\item 8 A4-Seiten Zusammenfassung (= 4 A4-Bl\"atter beidseitig)
+\item Taschenrechner Ti-30 ausser Ti-30x pro Multiview
+\end{itemize}
+
+\item S\"amtliche Berechnungen und \"Uberlegungen auf diese Bl\"atter schreiben und abgeben. Zus\"atzliche Bl\"atter sind nicht erlaubt.
+
+\item Resultate eindeutig und klar kennzeichnen (doppelt unterstreichen oder einrahmen). 
+
+\item Ung\"ultige Berechnungen und Resultate deutlich durchstreichen. \\ Falls unklar ist, welches Resultat gilt, gibt es keine Punkte.
+
+\item Nicht mit Bleistift, Farbstift, oder anderen radierbaren Stiften schreiben (z.B.\ Frixion Ball).
+
+\end{itemize}
+
+\vspace{1 em}
+
+\begin{center}
+{\huge Viel Erfolg!} 
+\end{center}
+
+\vspace{3 em}
+
+{\Large Name:}
+\vspace{1 em}
+\hrule
+\vspace{1 em}
+}
+
+
+\endinput
