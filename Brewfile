@@ -85,6 +85,10 @@ cask "libreoffice"
 cask "localsend"
 # Client for the Tresorit cloud storage service
 # cask "tresorit"
+# Desktop syncing client for ownCloud
+cask "owncloud"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
 
 # Fonts (Homebrew casks)
 cask "font-fira-code"
