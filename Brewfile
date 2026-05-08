@@ -84,7 +84,7 @@ cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Client for the Tresorit cloud storage service
-cask "tresorit"
+# cask "tresorit"
 
 # Fonts (Homebrew casks)
 cask "font-fira-code"
