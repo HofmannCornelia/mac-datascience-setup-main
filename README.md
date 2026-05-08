@@ -188,7 +188,8 @@ Manage dotfiles across machines:
 
 ### 2026-05-08
 - mactex download issue (partial download only) => standalone `brew install --cask mactex` works
-- tresorit has no sha256 checksum => manual install 
+- tresorit has no sha256 checksum => manual install
+- vivaldi from homebrew not signed => manual install
 
 ## Uninstalling Casks
 
