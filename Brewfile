@@ -46,7 +46,7 @@ cask "docker-desktop", greedy: true
 #  Vivaldi Web browser
 cask "vivaldi", greedy: true
 # Full TeX Live distribution with GUI applications
-cask "mactex", greedy: true
+# cask "mactex", greedy: true
 # LaTeX typesetting for PowerPoint
 cask "iguanatexmac"
 # Manage Homebrew packages with a UI
