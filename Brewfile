@@ -41,30 +41,20 @@ cask "iterm2", greedy: true
 cask "visual-studio-code", greedy: true
 # Desktop client for GitHub repositories
 cask "github", greedy: true
-# # Minimal installer for conda specific to conda-forge
-# # Automatically updates the conda environment after installation
-# cask "miniforge", args: { appdir: "/Applications" }
-# # cask "miniforge", postinstall: "${HOMEBREW_PREFIX}/bin/mamba env update --file environment.yml --prune --yes && mamba clean -yaf"
 # App to build and share containerised applications and microservices
 cask "docker-desktop", greedy: true
-# Google Chrome Web browser
-cask "google-chrome", greedy: true
+#  Vivaldi Web browser
+cask "vivaldi", greedy: true
 # Full TeX Live distribution with GUI applications
 cask "mactex", greedy: true
 # LaTeX typesetting for PowerPoint
 cask "iguanatexmac"
-# Client for Proton Drive
-cask "proton-drive", args: { appdir: "/Applications" }, greedy: true
-# VPN client focusing on security
-cask "protonvpn", greedy: true
 # Manage Homebrew packages with a UI
 # cask "wailbrew"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt", greedy: true
 # Anthropic's official Claude AI desktop app
 cask "claude", greedy: true
 # Music streaming service
-cask "spotify", greedy: true
+cask "tidal", greedy: true
 # Multi-agent programmable modelling environment
 cask "netlogo"
 # Video communication and virtual meeting platform
@@ -79,9 +69,6 @@ cask "bluos-controller"
 cask "keka"
 # Unpacks archive files
 cask "the-unarchiver"
-# Graphical interface for LaTeX
-# cask "latexit"
-# cask "latexit-metadata"
 # Display management tool
 # cask "betterdisplay"
 # The boring notch (https://theboring.name)
@@ -92,6 +79,12 @@ cask "freefilesync"
 cask "cyberduck"
 # Write, edit, and chat about your code with AI
 cask "cursor", greedy: true
+# Free cross-platform office suite
+cask "libreoffice"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Client for the Tresorit cloud storage service
+cask "tresorit"
 
 # Fonts (Homebrew casks)
 cask "font-fira-code"
