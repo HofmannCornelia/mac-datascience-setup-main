@@ -1,6 +1,7 @@
 # macOS Data Science Setup
 
 Automated setup for a complete data science development environment on macOS using Homebrew and Conda.
+copied from hols-zhaw on 2026-05-08
 
 ## Goals
 
