@@ -81,6 +81,8 @@ cask "owncloud"
 cask "dropbox"
 # Data science software focusing on R and Python
 cask "rstudio"
+# Visual diff and merge tool
+cask "meld"
 
 # Fonts (Homebrew casks)
 cask "font-fira-code"
