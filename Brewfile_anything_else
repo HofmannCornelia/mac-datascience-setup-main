@@ -7,3 +7,17 @@ cask_args appdir: "~/Applications", require_sha: true
 
 # Voice and text chat software
 cask "discord"
+# Music streaming service
+cask "tidal", greedy: true
+# Video communication and virtual meeting platform
+cask "zoom", greedy: true
+# Manage audio systems
+cask "bluos-controller"
+# Folder comparison and synchronization software
+cask "freefilesync"
+# Server and cloud storage browser
+cask "cyberduck"
+# Free cross-platform office suite
+cask "libreoffice"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
