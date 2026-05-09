@@ -21,3 +21,7 @@ cask "cyberduck"
 cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# todo list
+cask "todoist-app"
+# Free and open-source image editor
+cask "gimp"
