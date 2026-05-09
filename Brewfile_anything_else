@@ -1,0 +1,9 @@
+tap "buo/cask-upgrade"
+
+# Set arguments passed to all `brew install --cask` commands for `cask "..."`
+cask_args appdir: "~/Applications", require_sha: true
+
+
+
+# Voice and text chat software
+cask "discord"
