@@ -34,6 +34,10 @@ brew "uv"
 brew "pandoc"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node@24"
+# Improved top (interactive process viewer)
+brew "htop"
+# Software environment for statistical computing
+brew "r"
 
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2", greedy: true
@@ -53,18 +57,12 @@ cask "iguanatexmac"
 # cask "wailbrew"
 # Anthropic's official Claude AI desktop app
 cask "claude", greedy: true
-# Music streaming service
-cask "tidal", greedy: true
 # Multi-agent programmable modelling environment
 cask "netlogo"
-# Video communication and virtual meeting platform
-cask "zoom", greedy: true
 # Collect, organise, cite, and share research sources
 cask "zotero"
 # Web browser environment to carry out e-assessments safely
 cask "safe-exam-browser", args: { appdir: "/Applications" }
-# Manage audio systems
-cask "bluos-controller"
 # File archiver
 cask "keka"
 # Unpacks archive files
@@ -73,22 +71,16 @@ cask "the-unarchiver"
 # cask "betterdisplay"
 # The boring notch (https://theboring.name)
 # cask "boring-notch"
-# Folder comparison and synchronization software
-cask "freefilesync"
-# Server and cloud storage browser
-cask "cyberduck"
 # Write, edit, and chat about your code with AI
 cask "cursor", greedy: true
-# Free cross-platform office suite
-cask "libreoffice"
-# Open-source cross-platform alternative to AirDrop
-cask "localsend"
 # Client for the Tresorit cloud storage service
 # cask "tresorit"
 # Desktop syncing client for ownCloud
 cask "owncloud"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# Data science software focusing on R and Python
+cask "rstudio"
 
 # Fonts (Homebrew casks)
 cask "font-fira-code"
