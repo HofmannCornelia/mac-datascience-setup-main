@@ -88,7 +88,7 @@ cask "geogebra@5"
 # Visual diff and merge tool
 cask "meld"
 # Electronics prototyping platform
-cask "adruino-ide"
+cask "arduino-ide"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Evaluator for the Wolfram Language
