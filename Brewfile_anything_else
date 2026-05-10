@@ -33,3 +33,5 @@ cask "pdftk-java"
 cask "thunderbird"
 # Personalised focus music
 cask "focusatwill"
+# PDF reader and note-taking application
+cask "skim"
