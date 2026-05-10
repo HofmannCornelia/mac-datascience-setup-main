@@ -25,3 +25,11 @@ cask "localsend"
 cask "todoist-app"
 # Free and open-source image editor
 cask "gimp"
+# webbrowser
+cask "firefox"
+# Port of pdftk in java
+cask "pdftk-java"
+# Customizable email client
+cask "thunderbird"
+# Personalised focus music
+cask "focusatwill"
