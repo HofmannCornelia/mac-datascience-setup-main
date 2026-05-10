@@ -75,8 +75,8 @@ cask "the-unarchiver"
 cask "cursor", greedy: true
 # Client for the Tresorit cloud storage service
 # cask "tresorit"
-# Desktop syncing client for ownCloud
-cask "owncloud"
+# Desktop syncing client for ownCloud => switchdrive client
+# cask "owncloud"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # Data science software focusing on R and Python
