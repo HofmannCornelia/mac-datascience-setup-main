@@ -4,6 +4,9 @@ tap "buo/cask-upgrade"
 cask_args appdir: "~/Applications", require_sha: true
 
 
+# Port of pdftk in java
+brew "pdftk-java"
+
 
 # Voice and text chat software
 cask "discord"
@@ -27,8 +30,6 @@ cask "todoist-app"
 cask "gimp"
 # webbrowser
 cask "firefox"
-# Port of pdftk in java
-cask "pdftk-java"
 # Customizable email client
 cask "thunderbird"
 # Personalised focus music
