@@ -83,6 +83,19 @@ cask "dropbox"
 cask "rstudio"
 # Visual diff and merge tool
 cask "meld"
+# Solve, save and share math problems, graph functions, etc
+cask "geogebra@5"
+# Visual diff and merge tool
+cask "meld"
+# Electronics prototyping platform
+cask "adruino-ide"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Evaluator for the Wolfram Language
+cask "wolfram-engine"
+# Javascript frontend for Wolfram Engine
+cask "wljs-notebook"
+
 
 # Fonts (Homebrew casks)
 cask "font-fira-code"
