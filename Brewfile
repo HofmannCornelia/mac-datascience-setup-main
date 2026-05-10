@@ -89,8 +89,8 @@ cask "geogebra@5"
 cask "meld"
 # Electronics prototyping platform
 cask "arduino-ide"
-# Client for the Google Drive storage service
-cask "google-drive"
+# Client for the Google Drive storage service => no checksum
+# cask "google-drive"
 # Evaluator for the Wolfram Language
 cask "wolfram-engine"
 # Javascript frontend for Wolfram Engine
