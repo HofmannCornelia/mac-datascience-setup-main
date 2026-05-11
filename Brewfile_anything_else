@@ -36,6 +36,3 @@ cask "thunderbird"
 cask "focusatwill"
 # PDF reader and note-taking application
 cask "skim"
-
-# drawboard PDF from MAS
-mas "Drawboard PDF Annotate, Markup", id: 1086503728
