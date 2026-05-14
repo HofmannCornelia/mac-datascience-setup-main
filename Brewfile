@@ -38,6 +38,8 @@ brew "node@24"
 brew "htop"
 # Software environment for statistical computing
 brew "r"
+# Display and control your Android device
+brew "scrcpy"
 
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2", greedy: true
