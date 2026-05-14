@@ -97,6 +97,8 @@ cask "arduino-ide"
 cask "wolfram-engine"
 # Javascript frontend for Wolfram Engine
 cask "wljs-notebook"
+# Android SDK Platform-Tools
+cask "android-platform-tools"
 
 
 # Fonts (Homebrew casks)
