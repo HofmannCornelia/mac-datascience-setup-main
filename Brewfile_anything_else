@@ -36,3 +36,7 @@ cask "thunderbird"
 cask "focusatwill"
 # PDF reader and note-taking application
 cask "skim"
+# Window peeking utility app
+cask "dockdoor"
+# Screenshot measurement and annotation tool
+cask "shottr"
