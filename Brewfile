@@ -99,8 +99,6 @@ cask "wolfram-engine"
 cask "wljs-notebook"
 # Android SDK Platform-Tools
 cask "android-platform-tools"
-# Multi-document editor by KDE
-cask "kate"
 
 
 # Fonts (Homebrew casks)
