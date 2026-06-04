@@ -40,3 +40,7 @@ cask "skim"
 cask "dockdoor"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# Convert your caps lock key or any of your modifier keys to the hyper key
+cask "hyperkey"
+# Unicode keyboard layout editor
+cask "ukelele"
