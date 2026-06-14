@@ -44,3 +44,5 @@ cask "shottr"
 cask "hyperkey"
 # Unicode keyboard layout editor
 cask "ukelele"
+# Email client
+cask "fastmail"
