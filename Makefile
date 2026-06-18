@@ -20,6 +20,7 @@
 
 # Configuration
 BREWFILE := Brewfile
+BREWFILE_MORE := Brewfile_anything_else
 BREW := /opt/homebrew/bin/brew
 CONDA_ENV_FILE := environment.yml
 DEFAULT_CONDA_ENV_NAME := default
@@ -111,6 +112,23 @@ bundle: homebrew
 		brew bundle --file=$(BREWFILE)
 	@echo ""
 	@echo "✅ All Brewfile packages installed!"
+	@echo ""
+
+# --- Step 2.5: Brewfile_anything_else bundle installation ---
+# Installs all packages, applications, and fonts defined in $(BREWFILE_MORE)
+# Sources ~/.zshenv to respect HOMEBREW_CASK_OPTS for application directory
+# Idempotent: Safe to run multiple times, installs only missing packages
+bundlemore: homebrew
+	@echo "=========================================="
+	@echo "==> Step 2.5: Brewfile Bundle Installation"
+	@echo "=========================================="
+	@echo ""
+	@echo "Installing packages from $(BREWFILE_MORE)..."
+	@source ~/.zshenv 2>/dev/null || true && \
+		eval "$$($(BREW) shellenv)" && \
+		brew bundle --file=$(BREWFILE_MORE)
+	@echo ""
+	@echo "✅ All Brewfile_anything_else packages installed!"
 	@echo ""
 
 # --- Step 3: Miniforge installation ---

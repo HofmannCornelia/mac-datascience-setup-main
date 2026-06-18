@@ -55,6 +55,7 @@ cask "docker-desktop", greedy: true
 # cask "mactex", greedy: true
 # LaTeX typesetting for PowerPoint
 cask "iguanatexmac"
+cask "latexit-metadata" # as per installation instruction for iguanatexmac via homebrew
 # Manage Homebrew packages with a UI
 # cask "wailbrew"
 # Anthropic's official Claude AI desktop app

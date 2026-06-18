@@ -64,7 +64,8 @@ Run specific parts as needed:
 ```bash
 make homebrew    # Install Xcode tools and Homebrew
 make bundle      # Install Brewfile packages
-brew bundle install --file=~/git/mac-datascience-setup-main/Brewfile_anything_else # install Brewfile packages from secondary list
+# brew bundle install --file=~/git/mac-datascience-setup-main/Brewfile_anything_else # install Brewfile packages from secondary list
+make bundlemore  # Install Brewfile_anything_else packages
 make miniforge   # Install Miniforge (conda/mamba)
 make conda       # Initialize Conda/Mamba and setup Python environment
 make latex-perl  # (Optional) Install Perl modules for latexindent
