@@ -12,7 +12,7 @@ brew "pdftk-java"
 # Voice and text chat software
 cask "discord"
 # Music streaming service
-cask "tidal", greedy: true
+# cask "tidal", greedy: true # switched to PWA version
 # Video communication and virtual meeting platform
 cask "zoom", greedy: true
 # Manage audio systems
@@ -31,6 +31,8 @@ cask "todoist-app"
 cask "gimp"
 # webbrowser
 cask "firefox"
+# Gecko based web browser
+cask "zen"
 # Customizable email client
 cask "thunderbird"
 # Personalised focus music

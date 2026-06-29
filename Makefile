@@ -11,6 +11,7 @@
 #   make all       - Run complete setup (homebrew → bundle → miniforge → conda)
 #   make homebrew  - Install and configure Homebrew only
 #   make bundle    - Install Brewfile packages only
+#   make bundlemore    - Install Brewfile_anything_else packages only
 #   make miniforge - Install Miniforge (conda/mamba) only
 #   make conda     - Initialize Conda/Mamba and setup Python environment
 #   make latex-perl - Install Perl modules for latexindent (optional)
