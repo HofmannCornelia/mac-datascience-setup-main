@@ -82,6 +82,8 @@ cask "cursor", greedy: true
 # cask "owncloud"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# Desktop sync client for Nextcloud software products (switch drive)
+cask "nextcloud"
 # Data science software focusing on R and Python
 cask "rstudio"
 # Visual diff and merge tool
