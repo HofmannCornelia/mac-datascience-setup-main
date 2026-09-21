@@ -2,6 +2,7 @@ tap "buo/cask-upgrade"
 tap "tsung-ju/iguanatexmac"
 tap "wickenico/wailbrew"
 # tap "TheBoredTeam/boring-notch"
+tap "tranvuongquocdat/sidescreen"
 
 # Set arguments passed to all `brew install --cask` commands for `cask "..."`
 cask_args appdir: "~/Applications", require_sha: true
@@ -102,6 +103,8 @@ cask "wolfram-engine"
 cask "wljs-notebook"
 # Android SDK Platform-Tools
 cask "android-platform-tools"
+# Android to macos SideScreen
+cask "sidescreen"
 
 
 # Fonts (Homebrew casks)
