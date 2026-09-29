@@ -105,6 +105,8 @@ cask "wljs-notebook"
 cask "android-platform-tools"
 # Android to macos SideScreen
 cask "sidescreen"
+# Scientific and technical publishing system built on Pandoc
+cask "quarto"
 
 
 # Fonts (Homebrew casks)
