@@ -51,3 +51,5 @@ cask "ukelele"
 cask "fastmail"
 # Browse Android files on macOS
 cask "droiddock"
+# Keyboard customiser
+cask "karabiner-elements"
