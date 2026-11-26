@@ -46,6 +46,10 @@ brew "scrcpy"
 cask "iterm2", greedy: true
 # Open-source code editor
 cask "visual-studio-code", greedy: true
+# code editor without Microsoft telemetry
+cask "vscodium"
+# Text editor for code, markup and prose
+cask "sublime-text"
 # Desktop client for GitHub repositories
 cask "github", greedy: true
 # App to build and share containerised applications and microservices
@@ -89,6 +93,8 @@ cask "dropbox"
 cask "rstudio"
 # Visual diff and merge tool
 cask "meld"
+# Tool to compare and synchronise files and folders
+cask "deltawalker"
 # Solve, save and share math problems, graph functions, etc
 cask "geogebra@5"
 # Visual diff and merge tool
